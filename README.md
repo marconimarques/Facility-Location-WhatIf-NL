@@ -117,7 +117,9 @@ python main.py
 Explore how changing production target affects costs and facility selection.
 
 **User Question (in what-if mode):**
-> "What if production target is 200,000 tons?"
+> "What if production target is 145,000 tons?"
+
+<img src="./what-if.jpg" alt="Local File in Working Folder" width="500" />
 
 **System Behavior:**
 1. Calls Claude API to parse the natural language query
