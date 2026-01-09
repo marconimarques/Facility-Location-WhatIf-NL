@@ -123,7 +123,7 @@ Explore how changing production target affects costs and facility selection.
 
 **System Behavior:**
 1. Calls Claude API to parse the natural language query
-2. Extracts modification: `production_target = 200000`
+2. Extracts modification: `production_target = 145000`
 3. Displays parsed scenario and asks for confirmation
 4. Checks feasibility for Phase 1 (without MaterialE) and full scenario (with MaterialE)
 5. Runs two-phase optimization with modified production target
