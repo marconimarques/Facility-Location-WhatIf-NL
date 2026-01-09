@@ -20,6 +20,12 @@ After solving the baseline optimization, users can explore **natural language wh
 
 This application was **developed entirely using Claude Code** following specifications in the `guidance/` directory. As the prototype author, I am not a professional software developer. While the prototype is fully functional for its intended purpose, **I acknowledge concerns about scalability and future potential technical debt**.
 
+Prompt: 
+
+Get a full understanding of the files in `guidance/`. Based on the information you have checked, build your implemenation plan. 
+
+Note: Set Claude Code to plan mode.
+
 ---
 
 ## The Technology Stack
