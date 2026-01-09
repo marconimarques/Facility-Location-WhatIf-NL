@@ -263,9 +263,9 @@ logistics-design-nlmv01c/
 └── guidance/                    # Architecture documentation
     └── cli_architecture.md      # CLI design specification
 
-ANTHROPIC_API_KEY configured to use local OS environment variables
+* ANTHROPIC_API_KEY gets local Windows OS environment variable
 
-Create a venv (virtual environment) to install the prototype dependecies
+** Create a venv (virtual environment) to install the prototype dependecies
 
 ```
 
