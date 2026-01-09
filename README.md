@@ -135,7 +135,7 @@ Explore how changing production target affects costs and facility selection.
 8. Saves versioned report: `results/whatif_output_v1.md`
 
 **Key Insights Example:**
-> "The optimal facility location remains SupplierA_City1, confirming that the network structure is still appropriate. Increasing production to 200,000 tons raises total logistics costs from $12.3M to $14.1M (+15%), primarily due to the need for additional raw material procurement. The cost per ton increases slightly from $61.50 to $70.50, indicating modest economies of scale are offset by sourcing from more distant collection points..."
+> "The optimal facility location remains SupplierA_City1, confirming that the network structure is still appropriate. Total costs have decreased by approximately $10.7 million (31.1%), generating nearly $11 million in savings. This improvement is alongside a 25.6% reduction in production volume, with output decreasing to 145,000 tons. The largest savings drivers are Inbound Freight, down $4.1 million (38.4%), and Raw Materials, down $3.3 million (30.2%). Overall efficiency has improved, with cost per ton reduced by $12.84, declining from $175.98 to $163.15, indicating a stronger cost position despite lower production."
 
 ---
 
