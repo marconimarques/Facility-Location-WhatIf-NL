@@ -88,6 +88,7 @@ Run the standard facility location optimization to establish the baseline soluti
 ```bash
 python main.py
 ```
+<img src="./cli.jpg" alt="Local File in Working Folder" width="500" />
 
 **System Behavior:**
 1. Displays welcome banner with project overview
