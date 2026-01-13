@@ -22,7 +22,7 @@ This application was **developed entirely using Claude Code** following specific
 
 Prompt: 
 
-Get a full understanding of the files in `guidance/`. Based on the information you have checked, build your implemenation plan. 
+Get a full understanding of the files in `guidance/`. Based on the information you have checked, build your implementation plan. 
 
 Note: Set Claude Code to plan mode.
 
