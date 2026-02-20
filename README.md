@@ -1,4 +1,4 @@
-# Facility Location and Whatif with Natural Language 
+# Facility Location and What-if with Natural Language 
 
 ## Introduction
 
