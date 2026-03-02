@@ -18,7 +18,7 @@ After solving the baseline optimization, users can explore **natural language wh
 
 ### Development Approach
 
-This application was **developed entirely using Claude Code** following specifications in the `guidance/` directory. As the prototype author, I am not a professional software developer. While the prototype is fully functional for its intended purpose, **I acknowledge concerns about scalability and future potential technical debt**.
+This prototype was **developed entirely using Claude Code**. 
 
 Prompt: 
 
@@ -84,11 +84,9 @@ The what-if interface supports natural language queries to explore alternative s
 ### **Scenario 1: Baseline Optimization**
 Run the standard facility location optimization to establish the baseline solution.
 
-**User Action:**
-```bash
-python main.py
-```
+<p align="center">
 <img src="./cli.jpg" alt="Local File in Working Folder" width="500" />
+</p>
 
 **System Behavior:**
 1. Displays welcome banner with project overview
@@ -119,7 +117,9 @@ Explore how changing production target affects costs and facility selection.
 **User Question (in what-if mode):**
 > "What if production target is 145,000 tons?"
 
+<p align="center">
 <img src="./what-if.jpg" alt="Local File in Working Folder" width="800" />
+</p>
 
 **System Behavior:**
 1. Calls Claude API to parse the natural language query
@@ -139,59 +139,10 @@ Explore how changing production target affects costs and facility selection.
 
 ---
 
-## How the System Handles Your Queries
-
-### **Baseline Optimization Flow**
-1. **Data Loading:** Reads 5 Excel files from `data/` directory
-2. **Validation:** Pydantic models ensure data integrity and site ID consistency
-3. **Feasibility Check:** Verifies raw material availability meets production target
-4. **Phase 1 Model:** Pyomo builds MILP model excluding MaterialE
-5. **Phase 1 Solve:** HiGHS finds optimal facility location
-6. **Phase 2 Model:** Rebuilds model WITH MaterialE, facility fixed from Phase 1
-7. **Phase 2 Solve:** HiGHS optimizes full network with MaterialE
-8. **Result Extraction:** Parses Pyomo solution into structured dictionary
-9. **Display & Report:** Rich terminal output + markdown file generation
-
-### **What-If Scenario Flow**
-1. **User Query:** Natural language question entered in CLI
-2. **Claude API Call:** Parses query into structured modifications JSON
-   ```json
-   {
-     "modifications": [
-       {
-         "parameter_type": "production_target",
-         "action": "set",
-         "value": 200000.0,
-         "description": "Increase production to 200,000 tons"
-       }
-     ],
-     "scenario_name": "Increased Production Scenario",
-     "explanation": "This scenario tests higher production volume..."
-   }
-   ```
-3. **Data Modification:** Deep copies baseline data and applies changes
-4. **Feasibility Checks:** Validates Phase 1 (no MaterialE) and full feasibility
-5. **Two-Phase Optimization:** Runs same approach as baseline with modified data
-6. **Comparison:** Side-by-side tables comparing baseline vs what-if
-7. **Narrative Insights:** Claude-style business summary of key differences
-8. **Versioned Report:** Saves `whatif_output_vN.md` with auto-incrementing version
-
----
-
 ## Data Files
 
 ### Prepare Input Data
 Ensure the `data/` directory contains all required Excel files:
-
-```
-data/
-├── INPUT_RawMaterial_Details.xlsx
-├── INPUT_RawMaterial_Distance_Matrix_And_Freight.xlsx
-├── INPUT_FinishedProd_Distance_Matrix_And_Freight.xlsx
-├── INPUT_Demand_Yield_Limits.xlsx
-└── INPUT_Port_Details.xlsx
-```
-
 **File Descriptions:**
 - `INPUT_RawMaterial_Details.xlsx`: Collection point volumes and prices for Materials A-E
 - `INPUT_RawMaterial_Distance_Matrix_And_Freight.xlsx`: Inbound freight costs, MaterialE special freight
